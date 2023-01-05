@@ -23,6 +23,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'destAzureBlobStorage1'"
 		},
+		"zipAzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'zipAzureDataLakeStorage1'"
+		},
 		"OnpremServer_properties_typeProperties_host": {
 			"type": "string",
 			"defaultValue": "\\\\adflabvm\\data"
@@ -30,6 +34,10 @@
 		"OnpremServer_properties_typeProperties_userId": {
 			"type": "string",
 			"defaultValue": "developer"
+		},
+		"zipAzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://bigdatalabstore905.dfs.core.windows.net/"
 		},
 		"Trigger_2a7_properties_CopyOnPrem2AzurePipeline_parameters_windowStart": {
 			"type": "string",
@@ -78,6 +86,9 @@
 					"destAzureBlobStorage1_connectionString": {
 						"value": "[parameters('destAzureBlobStorage1_connectionString')]"
 					},
+					"zipAzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('zipAzureDataLakeStorage1_accountKey')]"
+					},
 					"trigger1_properties_typeProperties_scope": {
 						"value": "[parameters('trigger1_properties_typeProperties_scope')]"
 					},
@@ -86,6 +97,9 @@
 					},
 					"OnpremServer_properties_typeProperties_userId": {
 						"value": "[parameters('OnpremServer_properties_typeProperties_userId')]"
+					},
+					"zipAzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('zipAzureDataLakeStorage1_properties_typeProperties_url')]"
 					},
 					"Trigger_2a7_properties_CopyOnPrem2AzurePipeline_parameters_windowStart": {
 						"value": "[parameters('Trigger_2a7_properties_CopyOnPrem2AzurePipeline_parameters_windowStart')]"

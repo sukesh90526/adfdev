@@ -17,11 +17,17 @@
 		"destAzureBlobStorage1_connectionString": {
 			"value": ""
 		},
+		"zipAzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
 		"OnpremServer_properties_typeProperties_host": {
 			"value": "\\\\adflabvm\\data"
 		},
 		"OnpremServer_properties_typeProperties_userId": {
 			"value": "developer"
+		},
+		"zipAzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://bigdatalabstore905.dfs.core.windows.net/"
 		},
 		"Trigger_2a7_properties_CopyOnPrem2AzurePipeline_parameters_windowStart": {
 			"value": "@trigger().scheduledTime"
