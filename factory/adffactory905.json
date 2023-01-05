@@ -1,0 +1,9 @@
+{
+	"name": "adffactory905",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c90c5f93-91de-4489-90c3-bf46863468c5",
+		"tenantId": "5501500a-2ec3-4fb9-bdcc-7a4cce94b09d"
+	}
+}
