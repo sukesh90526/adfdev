@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adffactory905"
+		},
+		"BlobStorageoutput_connectionString": {
+			"value": ""
+		},
+		"OnpremServer_password": {
+			"value": ""
+		},
+		"cpyAzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"destAzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"OnpremServer_properties_typeProperties_host": {
+			"value": "\\\\adflabvm\\data"
+		},
+		"OnpremServer_properties_typeProperties_userId": {
+			"value": "developer"
+		},
+		"Trigger_2a7_properties_CopyOnPrem2AzurePipeline_parameters_windowStart": {
+			"value": "@trigger().scheduledTime"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"value": "/subscriptions/447e93a1-aaa4-400b-9a61-ca050618a13a/resourceGroups/hands-on-lab-bigdata/providers/Microsoft.Storage/storageAccounts/bigdatalabstore905"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

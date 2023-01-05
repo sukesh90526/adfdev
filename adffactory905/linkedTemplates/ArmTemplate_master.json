@@ -1,0 +1,98 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adffactory905"
+		},
+		"BlobStorageoutput_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'BlobStorageoutput'"
+		},
+		"OnpremServer_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'OnpremServer'"
+		},
+		"cpyAzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'cpyAzureBlobStorage1'"
+		},
+		"destAzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'destAzureBlobStorage1'"
+		},
+		"OnpremServer_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "\\\\adflabvm\\data"
+		},
+		"OnpremServer_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "developer"
+		},
+		"Trigger_2a7_properties_CopyOnPrem2AzurePipeline_parameters_windowStart": {
+			"type": "string",
+			"defaultValue": "@trigger().scheduledTime"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/447e93a1-aaa4-400b-9a61-ca050618a13a/resourceGroups/hands-on-lab-bigdata/providers/Microsoft.Storage/storageAccounts/bigdatalabstore905"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adffactory905_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"BlobStorageoutput_connectionString": {
+						"value": "[parameters('BlobStorageoutput_connectionString')]"
+					},
+					"OnpremServer_password": {
+						"value": "[parameters('OnpremServer_password')]"
+					},
+					"cpyAzureBlobStorage1_connectionString": {
+						"value": "[parameters('cpyAzureBlobStorage1_connectionString')]"
+					},
+					"destAzureBlobStorage1_connectionString": {
+						"value": "[parameters('destAzureBlobStorage1_connectionString')]"
+					},
+					"trigger1_properties_typeProperties_scope": {
+						"value": "[parameters('trigger1_properties_typeProperties_scope')]"
+					},
+					"OnpremServer_properties_typeProperties_host": {
+						"value": "[parameters('OnpremServer_properties_typeProperties_host')]"
+					},
+					"OnpremServer_properties_typeProperties_userId": {
+						"value": "[parameters('OnpremServer_properties_typeProperties_userId')]"
+					},
+					"Trigger_2a7_properties_CopyOnPrem2AzurePipeline_parameters_windowStart": {
+						"value": "[parameters('Trigger_2a7_properties_CopyOnPrem2AzurePipeline_parameters_windowStart')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
