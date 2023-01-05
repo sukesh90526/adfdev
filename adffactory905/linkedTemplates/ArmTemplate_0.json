@@ -720,8 +720,7 @@
 										"sink": {
 											"type": "BinarySink",
 											"storeSettings": {
-												"type": "AzureBlobFSWriteSettings",
-												"copyBehavior": "PreserveHierarchy"
+												"type": "AzureBlobFSWriteSettings"
 											}
 										},
 										"enableStaging": false
@@ -731,7 +730,10 @@
 											"referenceName": "Binary1",
 											"type": "DatasetReference",
 											"parameters": {
-												"filename": "*.zip"
+												"filename": {
+													"value": "@item().name",
+													"type": "Expression"
+												}
 											}
 										}
 									],
