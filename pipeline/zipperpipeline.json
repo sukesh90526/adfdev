@@ -22,7 +22,9 @@
 							"filename": "*.zip"
 						}
 					},
-					"fieldList": [],
+					"fieldList": [
+						"childItems"
+					],
 					"storeSettings": {
 						"type": "FileServerReadSettings",
 						"enablePartitionDiscovery": false
