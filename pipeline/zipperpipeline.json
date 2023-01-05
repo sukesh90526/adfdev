@@ -27,6 +27,7 @@
 					],
 					"storeSettings": {
 						"type": "FileServerReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -93,7 +94,10 @@
 									"referenceName": "Binary1",
 									"type": "DatasetReference",
 									"parameters": {
-										"filename": "*.zip"
+										"filename": {
+											"value": "@item().name",
+											"type": "Expression"
+										}
 									}
 								}
 							],
